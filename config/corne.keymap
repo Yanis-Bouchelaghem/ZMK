@@ -16,12 +16,12 @@
                         display-name = "Default Layer";
 // -----------------------------------------------------------------------------------------
 // |  none  |  Q           |  W            |  F             |  P             |  B  |   |  J  |  L               |  U            |  Y           |  P           | none |
-// |  none  |  mt(LGUI,A)  |  mt(LALT, R)  |  mt(LSHFT, S)  |  mt(LCTRL, T)  |  G  |   |  M  |  mt(RCTRL,N)     |  mt(RSHFT,E)  |  mt(RALT,I)  |  mt(RGUI,O)  | none |
+// |  none  |  mt(LGUI,A)  |  mt(LALT, R)  |  mt(LSHFT, S)  |  mt(LCTRL, T)  |  G  |   |  M  |  mt(LCTRL,N)     |  mt(LSHFT,E)  |  mt(LALT,I)  |  mt(LGUI,O)  | none |
 // |  none  |  Z           |  X            |  C             |  D             |  V  |   |  K  |  H               |  ,            |  .           |  /           | none |
 //                                                               | GUI | LWR | SPC |   | ENT | RSE  | ALT |
                         bindings = <
    &none     &kp Q              &kp W           &kp F           &kp P           &kp B   &kp J   &kp L           &kp U           &kp Y           &kp P           &none
-   &none     &mt LGUI A         &mt LALT R      &mt LSHFT S     &mt LCTRL T     &kp G   &kp M   &mt RCTRL N     &mt RSHFT E     &mt RALT I      &mt RGUI O      &none
+   &none     &mt LGUI A         &mt LALT R      &mt LSHFT S     &mt LCTRL T     &kp G   &kp M   &mt LCTRL N     &mt LSHFT E     &mt LALT I      &mt LGUI O      &none
    &none     &kp Z              &kp X           &kp C           &kp D           &kp V   &kp K   &kp H           &kp COMMA       &kp DOT         &kp FSLH        &none
                                                 &none LGUI      &mo 1           &kp SPACE       &kp RET         &mo 2           &kp RALT
                         >;
