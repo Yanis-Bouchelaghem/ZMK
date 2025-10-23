@@ -11,6 +11,15 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        underscore {
+            bindings = <&kp UNDERSCORE>;
+            key-positions = <19 22>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -41,10 +50,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&none  &kp EXCL     &kp AT      &kp LEFT_BRACE  &kp RIGHT_BRACE        &kp PIPE     &none     &kp PG_DN  &kp PG_UP  &none      &none  &none
-&none  &kp POUND    &kp DOLLAR  &kp LPAR        &kp RIGHT_PARENTHESIS  &kp GRAVE    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &none  &none
-&none  &kp PERCENT  &kp CARET   &kp LBKT        &kp RBKT               &kp TILDE    &none     &none      &none      &none      &none  &none
-                                &trans          &trans                 &trans       &trans    &trans     &trans
+&none  &kp EXCL     &kp AT      &kp LEFT_BRACE  &kp RIGHT_BRACE        &kp PIPE     &none     &kp PG_DN       &kp PG_UP  &none      &none  &none
+&none  &kp POUND    &kp DOLLAR  &kp LPAR        &kp RIGHT_PARENTHESIS  &kp GRAVE    &kp LEFT  &kp DOWN        &kp UP     &kp RIGHT  &none  &none
+&none  &kp PERCENT  &kp CARET   &kp LBKT        &kp RBKT               &kp TILDE    &none     &kp UNDERSCORE  &none      &none      &none  &none
+                                &trans          &trans                 &trans       &trans    &trans          &trans
             >;
         };
 
