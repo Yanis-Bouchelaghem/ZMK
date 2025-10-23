@@ -26,7 +26,24 @@
 &none  &kp Q        &kp W        &kp F         &kp P            &kp B        &kp J        &kp L                &kp U         &kp Y        &kp SEMICOLON  &none
 &none  &hml LGUI A  &hml LALT R  &hml LSHFT S  &hml LCTRL T     &kp G        &kp M        &hmr LCTRL N         &hmr LSHFT E  &hmr LALT I  &hmr LGUI O    &none
 &none  &kp Z        &kp X        &kp C         &kp D            &kp V        &kp K        &kp H                &kp COMMA     &kp DOT      &kp FSLH       &none
-                                 &kp ESC       &mt LSHFT SPACE  &lt 2 TAB    &lt 1 ENTER  &mt BSPC LEFT_SHIFT  &none
+                                 &kp ESC       &mt LSHFT SPACE  &lt 1 TAB    &lt 2 ENTER  &mt BSPC LEFT_SHIFT  &none
+            >;
+        };
+
+        number_layer {
+            display-name = "Number";
+
+            // -----------------------------------------------------------------------------------------
+            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
+            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
+            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
+            //                    | GUI |     | SPC |   | ENT |     | ALT |
+
+            bindings = <
+&none  &kp EXCL     &kp AT      &kp LEFT_BRACE  &kp RIGHT_BRACE        &kp PIPE     &kp PLUS   &kp N7  &kp N8  &kp N9  &kp STAR   &none
+&none  &kp POUND    &kp DOLLAR  &kp LPAR        &kp RIGHT_PARENTHESIS  &kp GRAVE    &kp MINUS  &kp N4  &kp N5  &kp N6  &kp COLON  &none
+&none  &kp PERCENT  &kp CARET   &kp LBKT        &kp RBKT               &kp TILDE    &kp EQUAL  &kp N1  &kp N2  &kp N3  &kp BSLH   &none
+                                &trans          &trans                 &trans       &trans     &trans  &kp N0
             >;
         };
 
@@ -44,23 +61,6 @@
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
 &kp LSHFT   &trans        &trans        &trans        &trans        &trans          &trans    &trans    &trans    &trans     &trans  &trans
                                         &kp LGUI      &trans        &kp SPACE       &kp RET   &trans    &kp RALT
-            >;
-        };
-
-        raise_layer {
-            display-name = "Raise Layer";
-
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
-            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
-            bindings = <
-&kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&kp LCTRL  &trans    &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT  &trans    &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
-                             &kp LGUI  &trans    &kp SPACE    &kp RET    &trans     &kp RALT
             >;
         };
     };
