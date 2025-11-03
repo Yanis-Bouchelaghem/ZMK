@@ -50,19 +50,19 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&none  &kp EXCL     &kp AT      &kp LEFT_BRACE  &kp RIGHT_BRACE        &kp PIPE     &none     &kp PG_DN       &kp PG_UP  &none      &none  &none
-&none  &kp POUND    &kp DOLLAR  &kp LPAR        &kp RIGHT_PARENTHESIS  &kp GRAVE    &kp LEFT  &kp DOWN        &kp UP     &kp RIGHT  &none  &none
-&none  &kp PERCENT  &kp CARET   &kp LBKT        &kp RBKT               &kp TILDE    &none     &kp UNDERSCORE  &none      &none      &none  &none
-                                &trans          &trans                 &trans       &trans    &trans          &trans
+&none  &kp EXCL     &kp AT      &kp LEFT_BRACE  &kp RIGHT_BRACE        &kp PIPE     &kp PLUS   &kp PG_DN       &kp PG_UP  &none              &kp STAR       &none
+&none  &kp POUND    &kp DOLLAR  &kp LPAR        &kp RIGHT_PARENTHESIS  &kp GRAVE    &kp MINUS  &kp LEFT        &kp DOWN   &kp UP             &kp RIGHT      &none
+&none  &kp PERCENT  &kp CARET   &kp LBKT        &kp RBKT               &kp TILDE    &kp EQUAL  &kp UNDERSCORE  &kp APOS   &kp DOUBLE_QUOTES  &kp BACKSLASH  &none
+                                &trans          &trans                 &trans       &trans     &trans          &trans
             >;
         };
 
         number_layer {
             display-name = "Number";
             bindings = <
-&none  &kp F1  &kp F2   &kp F3      &kp F4      &out OUT_TOG    &kp PLUS   &kp N7  &kp N8  &kp N9  &kp STAR   &none
-&none  &kp F5  &kp F6   &kp F7      &kp F8      &soft_off       &kp MINUS  &kp N4  &kp N5  &kp N6  &kp COLON  &none
-&none  &kp F9  &kp F10  &kp F11     &kp F12     &bootloader     &kp EQUAL  &kp N1  &kp N2  &kp N3  &kp BSLH   &none
+&none  &kp F1  &kp F2   &kp F3      &kp F4      &out OUT_TOG    &kp PLUS   &kp N7  &kp N8  &kp N9  &kp STAR  &none
+&none  &kp F5  &kp F6   &kp F7      &kp F8      &soft_off       &kp MINUS  &kp N4  &kp N5  &kp N6  &none     &none
+&none  &kp F9  &kp F10  &kp F11     &kp F12     &bootloader     &kp EQUAL  &kp N1  &kp N2  &kp N3  &kp BSLH  &none
                         &bt BT_CLR  &bt BT_PRV  &bt BT_NXT      &trans     &trans  &kp N0
             >;
         };
