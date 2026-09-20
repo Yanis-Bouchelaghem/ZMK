@@ -44,7 +44,7 @@
 &none  &kp Q        &kp W        &kp F         &kp P         &kp B      &kp J                  &kp L            &kp U         &kp Y        &kp SEMICOLON  &none
 &none  &hml LSHFT A &hml LGUI R  &hml LALT S   &hml LCTRL T  &kp G      &kp M                  &hmr LCTRL N     &hmr LALT E   &hmr LGUI I  &hmr LSHFT O    &none
 &none  &kp Z        &kp X        &kp C         &kp D         &kp V      &kp K                  &kp H            &kp COMMA     &kp DOT      &kp FSLH       &none
-                                 &kp ESC       &kp TAB       &lt 2 SPACE  &lt 1 DELETE           &kp BACKSPACE    &mt LEFT_SHIFT RETURN
+                                 &kp ESC       &mt LEFT_SHIFT TAB     &lt 2 SPACE  &lt 1 DELETE   &kp BACKSPACE    &kp RETURN
             >;
         };
 
