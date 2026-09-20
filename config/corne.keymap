@@ -41,7 +41,7 @@
 
             bindings = <
 &none  &kp Q        &kp W        &kp F         &kp P         &kp B      &kp J                  &kp L            &kp U         &kp Y        &kp SEMICOLON  &none
-&none  &hml LCTRL A &hml LGUI R  &hml LALT S   &hml LSHFT T  &kp G      &kp M                  &hmr LSHFT N     &hmr LALT E   &hmr LGUI I  &hmr LCTRL O    &none
+&none  &hml LSHFT A &hml LGUI R  &hml LALT S   &hml LCTRL T  &kp G      &kp M                  &hmr LCTRL N     &hmr LALT E   &hmr LGUI I  &hmr LSHFT O    &none
 &none  &kp Z        &kp X        &kp C         &kp D         &kp V      &kp K                  &kp H            &kp COMMA     &kp DOT      &kp FSLH       &none
                                  &kp ESC       &lt 2 SPACE   &kp TAB    &mt LEFT_SHIFT RETURN  &lt 1 DELETE     &kp BACKSPACE
             >;
