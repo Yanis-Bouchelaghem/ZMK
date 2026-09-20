@@ -14,6 +14,6 @@ manifest:
       import: app/west.yml
     - name: nice-view-gem
       remote: m165437
-      revision: 5dd7707c324310d29100403965c8a26b6d36bb2b # last commit compatible with zmk v0.3's LVGL 8; main moved to LVGL 9/zephyr v4.1
+      revision: 7794ebf7f75d7e16cb05240bcffe6c5a45ef5b44 # last commit compatible with zmk v0.3's LVGL 8; main moved to LVGL 9/zephyr v4.1
   self:
     path: config
