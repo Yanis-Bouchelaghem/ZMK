@@ -517,7 +517,13 @@ static void set_mods_status(struct zmk_widget_screen *widget,
                             struct mods_status_state state /* No usada directamente */) {
 #if !IS_ENABLED(CONFIG_ZMK_SPLIT) || IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL)
     // Obtiene el estado actual de los modificadores directamente
-    widget->state.mod_state = zmk_hid_get_explicit_mods();
+    // Local change: this listener fires on every key press/release; only redraw (full canvas +
+    // rotation) when the modifiers actually changed, to avoid extra work while typing.
+    uint8_t mods = zmk_hid_get_explicit_mods();
+    if (mods == widget->state.mod_state) {
+        return;
+    }
+    widget->state.mod_state = mods;
     // Vuelve a dibujar todo el canvas para reflejar el cambio
     draw_canvas(widget->obj, widget->cbuf, &widget->state);
 #endif

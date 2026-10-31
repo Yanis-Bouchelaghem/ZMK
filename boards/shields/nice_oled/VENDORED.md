@@ -8,3 +8,5 @@ Local changes:
 - `assets/balloon.c`: stock ZMK nice!view balloon art (MIT, ZMK contributors), cropped to 124x68.
 - `Kconfig.defconfig`, `CMakeLists.txt`, `widgets/animation.c`: new option
   `CONFIG_NICE_OLED_WIDGET_STATIC_IMAGE_PERIPHERAL_BALLOON` to show it on the peripheral.
+- `widgets/screen.c`: the modifier indicator listener now skips the full-screen redraw when the
+  modifiers did not change (upstream redraws on every key press/release).
