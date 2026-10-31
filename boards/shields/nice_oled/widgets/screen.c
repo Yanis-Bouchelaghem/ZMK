@@ -274,20 +274,33 @@ LV_IMG_DECLARE(win_white_0);
 
 // Arrays de imágenes: [0] = normal, [1] = activo (blanco/invertido)
 // Orden: Control, Shift, Alt/Opt, Gui/Cmd/Win
-#if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_FIXED_SYMBOL_WINDOWS)
+// Local change: both symbol sets are kept so they can be picked per BLE profile at runtime
+// (see NICE_OLED_WIDGET_MODIFIERS_INDICATORS_FIXED_SYMBOL_MACOS_PROFILE).
 // Windows: Control, Shift, Alt, Win
-static const lv_img_dsc_t *mod_imgs_normal[4] = {&control_0, &shift_0, &alt_0, &win_0};
-static const lv_img_dsc_t *mod_imgs_active[4] = {&control_white_0, &shift_white_0, &alt_white_0, &win_white_0};
-#else
-// macOS (default): Control, Shift, Option, Command
-static const lv_img_dsc_t *mod_imgs_normal[4] = {&control_0, &shift_0, &opt_0, &cmd_0};
-static const lv_img_dsc_t *mod_imgs_active[4] = {&control_white_0, &shift_white_0, &opt_white_0, &cmd_white_0};
+static const lv_img_dsc_t *mod_imgs_normal_win[4] = {&control_0, &shift_0, &alt_0, &win_0};
+static const lv_img_dsc_t *mod_imgs_active_win[4] = {&control_white_0, &shift_white_0, &alt_white_0, &win_white_0};
+// macOS: Control, Shift, Option, Command
+static const lv_img_dsc_t *mod_imgs_normal_mac[4] = {&control_0, &shift_0, &opt_0, &cmd_0};
+static const lv_img_dsc_t *mod_imgs_active_mac[4] = {&control_white_0, &shift_white_0, &opt_white_0, &cmd_white_0};
+
+static bool mods_use_macos_symbols(const struct status_state *state) {
+#if CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_FIXED_SYMBOL_MACOS_PROFILE > 0
+    if (state->selected_endpoint.transport == ZMK_TRANSPORT_BLE &&
+        state->active_profile_index ==
+            CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_FIXED_SYMBOL_MACOS_PROFILE - 1) {
+        return true;
+    }
 #endif
+    return !IS_ENABLED(CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_FIXED_SYMBOL_WINDOWS);
+}
 #endif // CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_FIXED_SYMBOL
 
 // Función de dibujo para los modificadores
 static void draw_mods_status(lv_obj_t *canvas, const struct status_state *state) {
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_FIXED_SYMBOL)
+    const bool use_mac = mods_use_macos_symbols(state);
+    const lv_img_dsc_t *const *mod_imgs_normal = use_mac ? mod_imgs_normal_mac : mod_imgs_normal_win;
+    const lv_img_dsc_t *const *mod_imgs_active = use_mac ? mod_imgs_active_mac : mod_imgs_active_win;
     // --- MODO SÍMBOLOS (Imágenes reales) ---
     lv_draw_img_dsc_t img_dsc;
     lv_draw_img_dsc_init(&img_dsc);

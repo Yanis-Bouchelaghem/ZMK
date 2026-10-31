@@ -10,3 +10,6 @@ Local changes:
   `CONFIG_NICE_OLED_WIDGET_STATIC_IMAGE_PERIPHERAL_BALLOON` to show it on the peripheral.
 - `widgets/screen.c`: the modifier indicator listener now skips the full-screen redraw when the
   modifiers did not change (upstream redraws on every key press/release).
+- `widgets/screen.c`, `Kconfig.defconfig`: new option
+  `CONFIG_NICE_OLED_WIDGET_MODIFIERS_INDICATORS_FIXED_SYMBOL_MACOS_PROFILE` (1-5, 0 = off) to show
+  macOS modifier symbols while that BLE profile is active, Windows/default symbols otherwise.

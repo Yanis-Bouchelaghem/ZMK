@@ -461,6 +461,13 @@ choice NICE_OLED_WIDGET_MODIFIERS_INDICATORS_FIXED_SYMBOL_OS
         bool "Windows (Win/Alt symbols)"
 endchoice
 
+# Local addition
+config NICE_OLED_WIDGET_MODIFIERS_INDICATORS_FIXED_SYMBOL_MACOS_PROFILE
+    int "BLE profile (1-5) that always shows macOS symbols, 0 = none"
+    default 0
+    range 0 5
+    depends on NICE_OLED_WIDGET_MODIFIERS_INDICATORS_FIXED_SYMBOL
+
 endif # NICE_OLED_WIDGET_MODIFIERS_INDICATORS_FIXED
 
 config NICE_OLED_WIDGET_MODIFIERS_INDICATORS_LUNA
